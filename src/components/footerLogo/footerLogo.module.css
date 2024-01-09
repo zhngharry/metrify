@@ -1,0 +1,13 @@
+.container {
+  background-color: #212121;
+  color: #fff;
+  align-items: left;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.text {
+  font-size: 14px;
+  font-weight: 200;
+}

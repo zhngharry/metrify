@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.image {
+  object-fit: fill;
+}
+
+.text {
+  font-weight: bold;
+}
