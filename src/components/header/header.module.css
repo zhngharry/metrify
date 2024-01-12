@@ -15,3 +15,11 @@
   align-items: center;
   display: flex;
 }
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+  font-weight: 300;
+  font-size: 20px;
+}

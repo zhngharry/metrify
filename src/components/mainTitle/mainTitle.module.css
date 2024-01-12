@@ -1,0 +1,30 @@
+.header {
+  display: flex;
+  gap: 211px;
+  align-items: center;
+}
+
+.slogan {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  justify-content: center;
+}
+
+.text {
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  gap: 41px;
+  align-items: center;
+}
+
+.loginText {
+  font-size: 24px;
+  font-weight: 400;
+  width: 600px;
+}

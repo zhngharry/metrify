@@ -4,9 +4,12 @@
 }
 
 .image {
-  object-fit: fill;
+  cursor: default;
+  user-select: none;
 }
 
 .text {
+  cursor: default;
+  user-select: none;
   font-weight: bold;
 }

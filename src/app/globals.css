@@ -1,5 +1,5 @@
 :root {
-  --bg: #301e44;
+  --bg: linear-gradient(to bottom, #212121, #2c1e48, #341f41);
   --textColor: white;
   --softBg: #f0f0f0;
   --softTextColor: #626262;
@@ -24,7 +24,7 @@ a {
 
 .container {
   min-height: 100vh;
-  background-color: var(--bg);
+  background: var(--bg);
   color: var(--textColor);
   overflow: auto;
 }
