@@ -1,4 +1,8 @@
-export const generateRandomString = (length) => {
+import { NextResponse } from "next/server";
+
+const client_id: string = process.env.CLIENT_ID as string;
+
+export const generateRandomString = (length: number) => {
   const characters =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
   let randomString = "";
@@ -13,7 +17,7 @@ export const generateRandomString = (length) => {
 
 export const handleLogin = () => {
   const state = generateRandomString(16);
-  const clientID = "887375b1455e411d83c6aa44fbeb9f00";
+  const clientID = client_id;
   const redirectURL = "http://localhost:3000/redirect";
   const scope = "user-read-private user-read-email";
 

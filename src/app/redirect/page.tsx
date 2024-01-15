@@ -1,27 +1,31 @@
 "use client";
 import { useEffect } from "react";
 import { useSearchParams } from "next/navigation";
+import styles from "./redirect.module.css";
+import { useRouter } from "next/navigation";
 
 export default function RedirectPage() {
   const params = useSearchParams();
-
-  const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+  const { push } = useRouter();
 
   useEffect(() => {
-    // Extract necessary codes from the query parameters
+    setTimeout(() => {
+      const code = params.get("code");
 
-    // Perform any additional logic (e.g., exchange code for access token with Spotify)
-    // ...
-
-    console.log(params);
-
-    // Redirect the user to the profile page
-    // window.location.href = "/profile";
-  }, [params]);
+      push("/profile");
+    }, 10000);
+  }, []);
 
   return (
-    <>
-      <h1>Redirecting...</h1>
-    </>
+    <div className={styles.container}>
+      <div className={styles.logo}>
+        <span className={styles.stroke}></span>
+        <span className={styles.stroke}></span>
+        <span className={styles.stroke}></span>
+        <span className={styles.stroke}></span>
+        <span className={styles.stroke}></span>
+      </div>
+      <div className={styles.text}>Loading your personal metrics...</div>
+    </div>
   );
 }
