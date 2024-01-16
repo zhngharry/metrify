@@ -3,6 +3,12 @@ import SpotifyProvider from "next-auth/providers/spotify";
 import axios from "axios";
 import { JWT } from "next-auth/jwt";
 import NextAuth from "next-auth/next";
+import { getServerSession } from "next-auth/next";
+import {
+  GetServerSidePropsContext,
+  NextApiRequest,
+  NextApiResponse,
+} from "next";
 
 const SPOTIFY_REFRESH_TOKEN_URL = "https://accounts.spotify.com/api/token";
 const CLIENT_ID = process.env.SPOTIFY_CLIENT_ID;
@@ -73,6 +79,15 @@ export const authOptions: NextAuthOptions = {
     },
   },
 };
+
+export function auth(
+  ...args:
+    | [GetServerSidePropsContext["req"], GetServerSidePropsContext["res"]]
+    | [NextApiRequest, NextApiResponse]
+    | []
+) {
+  return getServerSession(...args, authOptions);
+}
 
 const handler = NextAuth(authOptions);
 export { handler as POST, handler as GET };
