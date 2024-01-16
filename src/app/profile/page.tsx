@@ -13,7 +13,11 @@ const ProfilePage = () => {
 
   if (status !== "authenticated") {
     // Show loading screen while the authentication status is being checked
-    return <LoadingScreen />;
+    return (
+      <div className={styles.container}>
+        <LoadingScreen />
+      </div>
+    );
   }
 
   // If authenticated, display the profile content
@@ -37,7 +41,7 @@ const ProfilePage = () => {
           </div>
         </div>
       </div>
-      Tabs
+      <div>Tabs</div>
     </div>
   );
 };
