@@ -1,21 +1,6 @@
-"use client";
-import { useEffect } from "react";
-import { useSearchParams } from "next/navigation";
-import styles from "./redirect.module.css";
-import { useRouter } from "next/navigation";
+import styles from "./loading.module.css";
 
-export default function RedirectPage() {
-  const params = useSearchParams();
-  const { push } = useRouter();
-
-  useEffect(() => {
-    setTimeout(() => {
-      const code = params.get("code");
-
-      push("/profile");
-    }, 10000);
-  }, []);
-
+export default function LoadingScreen() {
   return (
     <div className={styles.container}>
       <div className={styles.logo}>

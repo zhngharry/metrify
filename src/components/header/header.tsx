@@ -11,8 +11,10 @@ const Header = () => {
         <Logo width={56} height={50} textSize={24} gap={12} />
       </div>
       <div className={styles.links}>
+        <Link href="/about" style={{ textDecoration: "none", color: "#FFF" }}>
+          About Metrify
+        </Link>
         <Login />
-        <Link href="/">About Metrify</Link>
       </div>
     </div>
   );

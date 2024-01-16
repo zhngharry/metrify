@@ -2,20 +2,31 @@
 
 import React from "react";
 import styles from "./loginText.module.css";
+import { signIn, useSession } from "next-auth/react";
+import { signOut } from "next-auth/react";
 import Link from "next/link";
-import { handleLogin } from "../../../../utils/spotifyAuth";
 
 const Login = () => {
-  let status = "notauthenticated";
+  const { status } = useSession();
 
   return (
     <>
-      {status === "notauthenticated" ? (
-        <span className={styles.link} onClick={handleLogin}>
+      {status === "unauthenticated" ? (
+        <span className={styles.link} onClick={() => signIn("spotify")}>
           Login with Spotify
         </span>
       ) : (
-        <Link href="/">Logout</Link>
+        <div className={styles.container}>
+          <Link
+            href="/profile"
+            style={{ textDecoration: "none", color: "#FFF" }}
+          >
+            Profile
+          </Link>
+          <span className={styles.link} onClick={() => signOut()}>
+            Logout
+          </span>
+        </div>
       )}
     </>
   );
