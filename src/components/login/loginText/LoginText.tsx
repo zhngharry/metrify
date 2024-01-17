@@ -5,8 +5,10 @@ import styles from "./loginText.module.css";
 import { signIn, useSession } from "next-auth/react";
 import { signOut } from "next-auth/react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const Login = () => {
+  const router = useRouter();
   const { status } = useSession();
 
   return (
@@ -23,7 +25,12 @@ const Login = () => {
           >
             Profile
           </Link>
-          <span className={styles.link} onClick={() => signOut()}>
+          <span
+            className={styles.link}
+            onClick={() => {
+              signOut({ callbackUrl: "http://localhost:3000/" });
+            }}
+          >
             Logout
           </span>
         </div>

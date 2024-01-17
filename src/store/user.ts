@@ -50,6 +50,7 @@ type Genre = {
 };
 
 type User = {
+  userId: string;
   name: string;
   imageSmall: string;
   imageBig: string;
@@ -72,28 +73,26 @@ type User = {
   genresAllTime: Genre[];
 };
 
-export const userStore = create((set) => ({
-  user: {
-    name: "",
-    imageSmall: "",
-    imageBig: "",
-    profileLink: "",
-    savedTracks: 0,
-    playlists: 0,
-    followers: 0,
-    musicPersona: {} as MusicPersona,
-    tracksRecent: [] as Track[],
-    artistsRecent: [] as Artist[],
-    albumsRecent: [] as Album[],
-    genresRecent: [] as Genre[],
-    tracks6Months: [] as Track[],
-    artists6Months: [] as Artist[],
-    albums6Months: [] as Album[],
-    genres6Months: [] as Genre[],
-    tracksAllTime: [] as Track[],
-    artistsAllTime: [] as Artist[],
-    albumsAllTime: [] as Album[],
-    genresAllTime: [] as Genre[],
-  } as User,
-  setUser: (user: User) => set({ user }),
+export const userStore = create<User>((set) => ({
+  userId: "",
+  name: "",
+  imageSmall: "",
+  imageBig: "",
+  profileLink: "",
+  savedTracks: 0,
+  playlists: 0,
+  followers: 0,
+  musicPersona: {} as MusicPersona,
+  tracksRecent: [] as Track[],
+  artistsRecent: [] as Artist[],
+  albumsRecent: [] as Album[],
+  genresRecent: [] as Genre[],
+  tracks6Months: [] as Track[],
+  artists6Months: [] as Artist[],
+  albums6Months: [] as Album[],
+  genres6Months: [] as Genre[],
+  tracksAllTime: [] as Track[],
+  artistsAllTime: [] as Artist[],
+  albumsAllTime: [] as Album[],
+  genresAllTime: [] as Genre[],
 }));

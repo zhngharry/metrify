@@ -13,7 +13,8 @@ import {
 const SPOTIFY_REFRESH_TOKEN_URL = "https://accounts.spotify.com/api/token";
 const CLIENT_ID = process.env.SPOTIFY_CLIENT_ID;
 const CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET;
-const spotifyScopes = "user-read-private user-read-email";
+const spotifyScopes =
+  "user-read-private user-read-email playlist-read-private user-library-read user-follow-modify";
 
 async function refreshAccessToken(token: JWT): Promise<JWT> {
   try {
@@ -78,6 +79,7 @@ export const authOptions: NextAuthOptions = {
       return session;
     },
   },
+  secret: process.env.NEXTAUTH_SECRET,
 };
 
 export function auth(

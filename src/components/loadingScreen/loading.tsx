@@ -10,7 +10,7 @@ export default function LoadingScreen() {
         <span className={styles.stroke}></span>
         <span className={styles.stroke}></span>
       </div>
-      <div className={styles.text}>Loading your personal metrics...</div>
+      <div className={styles.text}>Loading your profile...</div>
     </div>
   );
 }
