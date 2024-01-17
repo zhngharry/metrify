@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 150px;
+}
+
+.profileBanner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.profileBannerImage {
+  box-shadow: 0 1px 15px 2px rgba(0, 0, 0, 0.25);
+}
+
+.profileBannerText {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.profileBannerHeader {
+  font-size: 24px;
+  font-weight: 200;
+  font-style: italic;
+}
+.profileBannerTitle {
+  width: 550px;
+  height: 95px;
+  font-size: 64px;
+  font-weight: 700;
+}
+
+.profileBannerStats {
+  display: flex;
+  gap: 50px;
+  height: 71px;
+}

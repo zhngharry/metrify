@@ -11,7 +11,7 @@ const Login = () => {
 
   return (
     <>
-      {status === "unauthenticated" ? (
+      {status !== "authenticated" ? (
         <span className={styles.link} onClick={() => signIn("spotify")}>
           Login with Spotify
         </span>

@@ -14,6 +14,7 @@ const Header = () => {
         <Link href="/about" style={{ textDecoration: "none", color: "#FFF" }}>
           About Metrify
         </Link>
+
         <Login />
       </div>
     </div>

@@ -5,6 +5,17 @@ import styles from "./profilepage.module.css";
 import Image from "next/image";
 
 const ProfilePage = () => {
+  const { status, data } = useSession();
+
+  if (status !== "authenticated") {
+    // Show loading screen while the authentication status is being checked
+    return (
+      <div className={styles.container}>
+        <LoadingScreen />
+      </div>
+    );
+  }
+
   // If authenticated, display the profile content
   return (
     <div className={styles.container}>
