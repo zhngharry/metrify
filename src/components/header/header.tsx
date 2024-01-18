@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <div className={styles.container}>
       <div className={styles.logo}>
-        <Logo width={56} height={50} textSize={24} gap={12} />
+        <Logo width={56} height={50} textSize={24} gap={12} clickable={true} />
       </div>
       <div className={styles.links}>
         <Link href="/about" style={{ textDecoration: "none", color: "#FFF" }}>

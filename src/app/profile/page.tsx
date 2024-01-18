@@ -4,6 +4,7 @@ import Image from "next/image";
 import { getServerSession } from "next-auth";
 import { authOptions } from "../api/auth/[...nextauth]/route";
 import { userStore } from "@/src/store/user";
+import ProfileTabs from "@/src/components/profileTabs/tabs";
 
 const PROFILE_URL = "https://api.spotify.com/v1/me";
 const SAVED_TRACKS_URL = "https://api.spotify.com/v1/me/tracks";
@@ -79,7 +80,7 @@ export default async function ProfilePage() {
           </div>
         </div>
       </div>
-      <div>Tabs</div>
+      <ProfileTabs />
     </div>
   );
 }

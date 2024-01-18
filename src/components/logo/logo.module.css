@@ -5,6 +5,7 @@
 
 .image {
   cursor: default;
+  pointer-events: none;
   user-select: none;
 }
 

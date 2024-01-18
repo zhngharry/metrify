@@ -13,7 +13,13 @@ const MainTitle = () => {
   return (
     <div className={styles.header}>
       <div className={styles.slogan}>
-        <Logo width={166} height={148} textSize={80} gap={26} />
+        <Logo
+          width={166}
+          height={148}
+          textSize={80}
+          gap={26}
+          clickable={false}
+        />
         <div className={styles.text}>TRACK YOUR VIBE</div>
       </div>
 

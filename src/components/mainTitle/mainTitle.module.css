@@ -42,3 +42,7 @@
   cursor: pointer;
   user-select: none;
 }
+
+.loginButton:hover {
+  background-color: #48327d; /* Change this to the desired color on hover */
+}
