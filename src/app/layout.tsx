@@ -3,7 +3,6 @@ import { Poppins } from "next/font/google";
 import Header from "../components/header/header";
 import Footer from "../components/footer/footer";
 import AuthProvider from "../providers/AuthProvider";
-import UIProvider from "../providers/NextUIProvider";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -23,13 +22,11 @@ export default function RootLayout({ children }: { children: any }) {
       {/* <meta name="theme-color" content="dark" /> */}
       <body className={poppins.className}>
         <AuthProvider>
-          <UIProvider>
-            <div className="container">
-              <Header />
-              <div className="wrapper">{children}</div>
-              <Footer />
-            </div>
-          </UIProvider>
+          <div className="container">
+            <Header />
+            <div className="wrapper">{children}</div>
+            <Footer />
+          </div>
         </AuthProvider>
       </body>
     </html>

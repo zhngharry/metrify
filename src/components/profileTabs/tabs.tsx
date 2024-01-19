@@ -1,27 +1,42 @@
 "use client";
+import React, { ReactElement, useState } from "react";
 
-import React from "react";
-import { Tabs, Tab } from "@nextui-org/react";
 import styles from "./tabs.module.css";
 
-const ProfileTabs = () => {
+const Tabs = ({ children }: { children: any }) => {
+  const tabs = ["MUSIC PERSONA", "TRACKS", "ARTISTS", "ALBUMS", "GENRES"];
+  const [activeTab, setActiveTab] = useState(tabs[0]);
+
+  const handleTabClick = (tab: string) => {
+    setActiveTab(tab);
+  };
+
   return (
     <div className={styles.container}>
-      <Tabs
-        key="underlined"
-        color="primary"
-        variant="underlined"
-        size="lg"
-        aria-label="Profile"
-      >
-        <Tab key="persona" title="Music Persona" />
-        <Tab key="tracks" title="Tracks" />
-        <Tab key="artists" title="Artists" />
-        <Tab key="albums" title="Albums" />
-        <Tab key="genres" title="Genres" />
-      </Tabs>
+      <div className={styles.tabsContainer}>
+        {tabs.map((tab) => (
+          <div
+            key={tab}
+            className={`${styles.tab} ${
+              activeTab === tab ? styles.activeTab : ""
+            }`}
+            onClick={() => handleTabClick(tab)}
+          >
+            {tab}
+          </div>
+        ))}
+      </div>
+      <div className="tab-content">
+        {React.Children.map(children, (child: ReactElement, index) => {
+          // Only render the content of the active tab
+          if (tabs[index] === activeTab) {
+            return child;
+          }
+          return null;
+        })}
+      </div>
     </div>
   );
 };
 
-export default ProfileTabs;
+export default Tabs;

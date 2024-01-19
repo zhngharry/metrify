@@ -4,7 +4,12 @@ import Image from "next/image";
 import { getServerSession } from "next-auth";
 import { authOptions } from "../api/auth/[...nextauth]/route";
 import { userStore } from "@/src/store/user";
-import ProfileTabs from "@/src/components/profileTabs/tabs";
+import Tabs from "@/src/components/profileTabs/tabs";
+import MusicPersona from "@/src/components/tabViews/musicPersona/musicPersona";
+import Tracks from "@/src/components/tabViews/tracks/tracks";
+import Artists from "@/src/components/tabViews/artists/artists";
+import Albums from "@/src/components/tabViews/albums/albums";
+import Genres from "@/src/components/tabViews/genres/genres";
 
 const PROFILE_URL = "https://api.spotify.com/v1/me";
 const SAVED_TRACKS_URL = "https://api.spotify.com/v1/me/tracks";
@@ -80,7 +85,13 @@ export default async function ProfilePage() {
           </div>
         </div>
       </div>
-      <ProfileTabs />
+      <Tabs>
+        <MusicPersona />
+        <Tracks />
+        <Artists />
+        <Albums />
+        <Genres />
+      </Tabs>
     </div>
   );
 }
