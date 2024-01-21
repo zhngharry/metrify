@@ -1,0 +1,59 @@
+.tabsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tabsContainerLine {
+  border-top: 2px solid rgba(169, 132, 255, 0.31);
+}
+
+.tab {
+  width: 210px;
+  height: 54px;
+}
+
+.tab:hover {
+  cursor: pointer;
+  color: #dccfec;
+}
+
+.tabText {
+  font-size: 24px;
+  font-weight: 100;
+  text-align: center;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.line {
+  position: relative;
+  width: 210px;
+  height: 2px;
+  background-color: #a984ff;
+  transition: transform 0.5s ease;
+  box-shadow: #a984ff 0px 1px 4px 0px;
+  border-radius: 10px;
+}
+
+.linestate-1 {
+  transform: translateX(210px);
+}
+
+.linestate-2 {
+  transform: translateX(420px);
+}
+
+.linestate-3 {
+  transform: translateX(630px);
+}
+
+.linestate-4 {
+  transform: translateX(840px);
+}
+
+.linestate-5 {
+  transform: translateX(1050px);
+}

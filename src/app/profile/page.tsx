@@ -67,31 +67,50 @@ export default async function ProfilePage() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.profileBanner}>
-        <Image
-          src={userStore.getState().imageBig}
-          alt=""
-          height={240}
-          width={240}
-          className={styles.profileBannerImage}
-        ></Image>
-        <div className={styles.profileBannerText}>
-          <div className={styles.profileBannerHeader}>USER PROFILE</div>
-          <div className={styles.profileBannerTitle}>{session?.user?.name}</div>
-          <div className={styles.profileBannerStats}>
-            Followers: {userStore.getState().followers}
-            Saved Tracks: {userStore.getState().savedTracks}
-            Saved Playlists: {userStore.getState().playlists}
+      <div className={styles.content}>
+        <div className={styles.profileBanner}>
+          <Image
+            src={userStore.getState().imageBig}
+            alt=""
+            height={240}
+            width={240}
+            className={styles.profileBannerImage}
+          ></Image>
+          <div className={styles.profileBannerText}>
+            <div className={styles.profileBannerHeader}>USER PROFILE</div>
+            <div className={styles.profileBannerTitle}>
+              {session?.user?.name}
+            </div>
+            <div className={styles.profileBannerStatsContainer}>
+              <div className={styles.statsText}>
+                <div className={styles.statNumber}>
+                  {userStore.getState().followers}
+                </div>
+                <div className={styles.statName}>Followers</div>
+              </div>
+              <div className={styles.statsText}>
+                <div className={styles.statNumber}>
+                  {userStore.getState().savedTracks}
+                </div>
+                <div className={styles.statName}>Saved Tracks</div>
+              </div>
+              <div className={styles.statsText}>
+                <div className={styles.statNumber}>
+                  {userStore.getState().playlists}
+                </div>
+                <div className={styles.statName}>Saved Playlists</div>
+              </div>
+            </div>
           </div>
         </div>
+        <Tabs>
+          <MusicPersona />
+          <Tracks />
+          <Artists />
+          <Albums />
+          <Genres />
+        </Tabs>
       </div>
-      <Tabs>
-        <MusicPersona />
-        <Tracks />
-        <Artists />
-        <Albums />
-        <Genres />
-      </Tabs>
     </div>
   );
 }

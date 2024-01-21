@@ -6,6 +6,13 @@
   gap: 150px;
 }
 
+.content {
+  display: flex;
+  align-items: first baseline;
+  flex-direction: column;
+  gap: 55px;
+}
+
 .profileBanner {
   display: flex;
   justify-content: center;
@@ -20,7 +27,7 @@
 .profileBannerText {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 22px;
 }
 
 .profileBannerHeader {
@@ -35,8 +42,25 @@
   font-weight: 700;
 }
 
-.profileBannerStats {
+.profileBannerStatsContainer {
   display: flex;
   gap: 50px;
   height: 71px;
+}
+
+.statsText {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.statNumber {
+  font-size: 24px;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.statName {
+  font-size: 20px;
+  font-weight: 400;
 }
