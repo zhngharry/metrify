@@ -44,7 +44,6 @@ type Album = {
 
 type Genre = {
   name: string;
-  percentage: number;
   placement: number;
   amountTopArtists: number;
 };
@@ -58,19 +57,20 @@ type User = {
   savedTracks: number;
   playlists: number;
   followers: number;
+  //
   musicPersona: MusicPersona;
-  tracksRecent: Track[];
-  artistsRecent: Artist[];
-  albumsRecent: Album[];
-  genresRecent: Genre[];
-  tracks6Months: Track[];
-  artists6Months: Artist[];
-  albums6Months: Album[];
-  genres6Months: Genre[];
-  tracksAllTime: Track[];
-  artistsAllTime: Artist[];
-  albumsAllTime: Album[];
-  genresAllTime: Genre[];
+  tracks_short_term: Track[];
+  artists_short_term: Artist[];
+  albums_short_term: Album[];
+  genres_short_term: Genre[];
+  tracks_medium_term: Track[];
+  artists_medium_term: Artist[];
+  albums_medium_term: Album[];
+  genres_medium_term: Genre[];
+  tracks_long_term: Track[];
+  artists_long_term: Artist[];
+  albums_long_term: Album[];
+  genres_long_term: Genre[];
 };
 
 export const userStore = create<User>((set) => ({
@@ -83,16 +83,16 @@ export const userStore = create<User>((set) => ({
   playlists: 0,
   followers: 0,
   musicPersona: {} as MusicPersona,
-  tracksRecent: [] as Track[],
-  artistsRecent: [] as Artist[],
-  albumsRecent: [] as Album[],
-  genresRecent: [] as Genre[],
-  tracks6Months: [] as Track[],
-  artists6Months: [] as Artist[],
-  albums6Months: [] as Album[],
-  genres6Months: [] as Genre[],
-  tracksAllTime: [] as Track[],
-  artistsAllTime: [] as Artist[],
-  albumsAllTime: [] as Album[],
-  genresAllTime: [] as Genre[],
+  tracks_short_term: [] as Track[],
+  artists_short_term: [] as Artist[],
+  albums_short_term: [] as Album[],
+  genres_short_term: [] as Genre[],
+  tracks_medium_term: [] as Track[],
+  artists_medium_term: [] as Artist[],
+  albums_medium_term: [] as Album[],
+  genres_medium_term: [] as Genre[],
+  tracks_long_term: [] as Track[],
+  artists_long_term: [] as Artist[],
+  albums_long_term: [] as Album[],
+  genres_long_term: [] as Genre[],
 }));

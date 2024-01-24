@@ -1,8 +1,11 @@
 import React from "react";
 
+import { userStore } from "@/src/store/user";
 import styles from "./musicPersona.module.css";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/src/utils/authOptions";
 
-const MusicPersona = () => {
+export default function MusicPersona() {
   return (
     <div className={styles.container}>
       <div className={styles.personaContainer}>
@@ -23,6 +26,4 @@ const MusicPersona = () => {
       </div>
     </div>
   );
-};
-
-export default MusicPersona;
+}
